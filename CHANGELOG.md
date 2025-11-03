@@ -7,7 +7,15 @@ Repository:
 All notable changes to this project will be documented in this file.  
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/balaji8385/hapi-zod/compare/v2.2.2...HEAD)
+## [Unreleased](https://github.com/balaji8385/hapi-zod/compare/v2.2.3...HEAD)
+
+## [v2.2.3](https://github.com/balaji8385/hapi-zod/compare/v2.2.2...v2.2.3) – 2025-11-03
+
+### Commits
+
+- [ [`52d4111`](/commit/52d4111a1312b5ff61ec4e5e88e82076e3da4f62) ] chore: update changelog by Balaji Narayanan <<balaji.narayanan@lifeline.com>>
+- [ [`6725472`](/commit/6725472f30cc3ee207b662e105438dc888a8abeb) ] Implement includedTags for route documentation filtering by cjnqt <<cjnqt@users.noreply.github.com>>
+- [ [`5f1941a`](/commit/5f1941a884b5dbb98973bb09abd5ffd90251181c) ] Add 'includedTags' option to README by cjnqt <<cjnqt@users.noreply.github.com>>
 
 ## [v2.2.2](https://github.com/balaji8385/hapi-zod/compare/v2.2.1...v2.2.2) – 2025-09-08
 
