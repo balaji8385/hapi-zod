@@ -7,7 +7,14 @@ Repository:
 All notable changes to this project will be documented in this file.  
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/balaji8385/hapi-zod/compare/v2.2.3...HEAD)
+## [Unreleased](https://github.com/balaji8385/hapi-zod/compare/v2.2.4...HEAD)
+
+## [v2.2.4](https://github.com/balaji8385/hapi-zod/compare/v2.2.3...v2.2.4) – 2025-11-03
+
+### Commits
+
+- [ [`e94ff3c`](/commit/e94ff3c3e83d6241cb6af2d6b0c7675b1c0d242d) ] chore: update changelog by Balaji Narayanan <<balaji.narayanan@lifeline.com>>
+- [ [`8134384`](/commit/8134384103e8856f0fa9224c4d5226549e260e8d) ] Bug Fix - swagger docs by Balaji Narayanan <<balaji.narayanan@lifeline.com>>
 
 ## [v2.2.3](https://github.com/balaji8385/hapi-zod/compare/v2.2.2...v2.2.3) – 2025-11-03
 
