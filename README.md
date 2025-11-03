@@ -159,6 +159,7 @@ const start = async () => {
     docsPath: '/docs',
     jsonPath: '/openapi.json',
     enableSwaggerUI: true,
+    includedTags: ['public'],
   }));
   await server.start();
   console.log(`Server running on ${server.info.uri}`);
@@ -183,6 +184,7 @@ The `swaggerPlugin` supports the following options:
 - **jsonPath**: The path to access the OpenAPI JSON schema. Default: `'/ops/openapi.json'`.
 - **enableSwaggerUI**: Whether to enable the Swagger UI. Default: `true`.
 - **defaultResponseSchema**: The default response schema for all routes. Default: `z.object({ success: z.boolean() })`.
+- **includedTags**: Limit documentation to only routes tagged with one of the `includedTags`. Default: `[]` (document every route).
 
 ## Collaborators
 

@@ -9,6 +9,7 @@ export interface ZodDocsOptions {
   jsonPath?: string;
   enableSwaggerUI?: boolean;
   defaultResponseSchema?: z.ZodTypeAny;
+  includedTags?: string[];
 }
 
 /**
@@ -38,6 +39,12 @@ export const swaggerPlugin = (options: ZodDocsOptions = {}): Plugin<{}> => {
     version: '1.0.0',
     register: async (server) => {
       const paths: OpenAPIObject['paths'] = {};
+
+      let routes = server.table();
+      if (includedTags.length) {
+        // Only document routes tagged with one of includedTags[]
+        routes = routes.filter(route => route.settings.tags?.some(tag => includedTags.includes(tag)))
+      }
 
       for (const route of server.table()) {
         const zodConfig = route.settings?.plugins?.zod;
