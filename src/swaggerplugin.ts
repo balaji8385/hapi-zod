@@ -41,12 +41,12 @@ export const swaggerPlugin = (options: ZodDocsOptions = {}): Plugin<{}> => {
       const paths: OpenAPIObject['paths'] = {};
 
       let routes = server.table();
-      if (includedTags.length) {
+      if (options?.includedTags?.length) {
         // Only document routes tagged with one of includedTags[]
-        routes = routes.filter(route => route.settings.tags?.some(tag => includedTags.includes(tag)))
+        routes = routes.filter(route => route?.settings?.tags?.some(tag => options.includedTags.includes(tag)))
       }
 
-      for (const route of server.table()) {
+      for (const route of routes) {
         const zodConfig = route.settings?.plugins?.zod;
         if (!zodConfig) continue;
 
