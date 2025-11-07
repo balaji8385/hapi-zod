@@ -15,7 +15,7 @@ declare module '@hapi/hapi' {
 
 
 export interface HapiZodOptions {
-  formatError?: (error: any) => string;
+  formatError?: (error: any, payload?: any) => string;
   boomError?: boolean;
   parse?: {
     payload?: boolean;
@@ -25,5 +25,5 @@ export interface HapiZodOptions {
     state?: boolean;
   };
 
-  logger ?: (error: any) => void
+  logger ?: (error: any, payload?: any) => void
 }

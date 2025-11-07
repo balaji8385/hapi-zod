@@ -21,17 +21,21 @@ const ZodValidatorPlugin = (options: HapiZodOptions = {}): Plugin<null> => {
           state?: ZodType<any, any>;
         };
 
+        let lastPayloadValidated: any = null;
+
         try {
 
           // Adding loop so that in future adding in array will be enough
           for (const prop of supportedProps) {
             if (routeValidation?.[prop] && parse[prop]) {
-              if(prop === 'query'){;
-                const parsedProp = routeValidation[prop].parse(normalizeBooleansAndNumbers(request[prop]));
+              if(prop === 'query'){
+                lastPayloadValidated = normalizeBooleansAndNumbers(request.query);
+                const parsedProp = routeValidation[prop].parse(lastPayloadValidated);
                 Object.assign(request, { [prop]: parsedProp });
               }
               else{
-                const parsedProp = routeValidation[prop].parse(request[prop]);
+                lastPayloadValidated = request[prop];
+                const parsedProp = routeValidation[prop].parse(lastPayloadValidated);
                 Object.assign(request, { [prop]: parsedProp });
               }
             }
@@ -39,10 +43,10 @@ const ZodValidatorPlugin = (options: HapiZodOptions = {}): Plugin<null> => {
 
           return h.continue;
         } catch (err) {
-          const error = options.formatError ? options.formatError(err) : z.prettifyError(err);
+          const error = options.formatError ? options.formatError(err, lastPayloadValidated) : z.prettifyError(err);
           if(boomError) {
             if(options.logger) {
-              options.logger(error);
+              options.logger(error, lastPayloadValidated);
             }
             else{
               console.error(error);
