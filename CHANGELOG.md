@@ -7,7 +7,15 @@ Repository:
 All notable changes to this project will be documented in this file.  
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/balaji8385/hapi-zod/compare/v2.2.4...HEAD)
+## [Unreleased](https://github.com/balaji8385/hapi-zod/compare/v2.2.5...HEAD)
+
+## [v2.2.5](https://github.com/balaji8385/hapi-zod/compare/v2.2.4...v2.2.5) – 2025-11-07
+
+### Commits
+
+- [ [`dc0eb88`](/commit/dc0eb88e491083d7677a05283ed0dc2b01b57efd) ] Create CONTRIBUTING.md by Balaji Lakshmi Narayanan <<lbalaji@live.com>>
+- [ [`f160d4f`](/commit/f160d4f620a740bd6395cd3588e982f96e26c2d8) ] Enhance SECURITY.md with detailed security policies by Balaji Lakshmi Narayanan <<lbalaji@live.com>>
+- [ [`cd70cf4`](/commit/cd70cf4d524cabc278349599ae9b20345d3781ad) ] Update link from 'Faq' to 'Wiki' in CODE_OF_CONDUCT by Balaji Lakshmi Narayanan <<lbalaji@live.com>>
 
 ## [v2.2.4](https://github.com/balaji8385/hapi-zod/compare/v2.2.3...v2.2.4) – 2025-11-03
 
