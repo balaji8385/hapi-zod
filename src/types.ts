@@ -25,5 +25,5 @@ export interface HapiZodOptions {
     state?: boolean;
   };
 
-  logger ?: (error: any, payload?: any) => void
+  logger ?: (error: any, payload?: any, parameterType?: 'payload' | 'query' | 'params' | 'headers' | 'state') => void
 }
