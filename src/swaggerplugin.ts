@@ -22,6 +22,7 @@ export const swaggerPlugin = (options: ZodDocsOptions = {}): Plugin<{}> => {
     enableSwaggerUI = true,
     openapiSpec = {
       openapi: '3.0.0',
+      servers: [],
       info: {
         title: 'Ops API Docs',
         version: '1.0.0',
@@ -71,7 +72,6 @@ export const swaggerPlugin = (options: ZodDocsOptions = {}): Plugin<{}> => {
 
         // Path parameters
         if (zodConfig.params && zodConfig.params instanceof ZodObject) {
-          const paramsSchema = zodConfig.params as z.ZodObject<any>;
           for (const [key, schema] of Object.entries(zodConfig.params._zod.def.shape)) {
             parameters.push({
               name: key,
@@ -124,6 +124,9 @@ export const swaggerPlugin = (options: ZodDocsOptions = {}): Plugin<{}> => {
           securitySchemes: securitySchemes || {},
         },
       };
+
+      if(openapiSpec.servers) document.servers = openapiSpec.servers;
+      if(openapiSpec.externalDocs) document.externalDocs = openapiSpec.externalDocs;
 
       if (Object.keys(securitySchemes).length > 0) {
         document.security = Object.keys(securitySchemes).map((name) => ({
